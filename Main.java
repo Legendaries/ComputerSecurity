@@ -25,12 +25,7 @@ public class Main {
 				md = MessageDigest.getInstance("MD5");
 				map.put(new BigInteger(1,md.digest(bytesOfMessage)).toString(16), password);
 			}
-			
-			PrintWriter pw = new PrintWriter(new FileOutputStream(new File("dict3.txt")));
-			for(String hash : map.keySet()) {
-				pw.println(map.get(hash));
-				pw.println(hash);
-			}
+
 			//Find passwords
 			for(String h : hashes) {
 				long start = System.nanoTime();
